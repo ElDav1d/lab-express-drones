@@ -1,19 +1,24 @@
-<h2>Available drones</h2>
-
-<ul>
-  {{#each droneList}}
-  <li>
-    <h3>Name: {{this.name}} </h3>
-    <h4>Propellers: {{this.propellers}}</h4>
-    <h4>Maximum Speed: {{this.maxSpeed}} </h4>
-    <a href="/drones/{{this._id}}/edit">Edit</a>
-    <br>
-    <br>
-    <form action="/drones/{{_id}}/delete" method="POST">
-      <button>
-        Delete
-      </button>
-    </form>
-  </li>
-  {{/each}}
-</ul>
+<article>
+  <h1 class="heading">Available drones</h1>
+  <section>
+    <ul class="drone-list">
+      {{#each droneList}}
+      <li class="drone-item">
+        <div>
+          <h2 class="drone-item-heading">Name: {{this.name}}</h2>
+          <h3 class="drone-item-subheading">Propellers: {{this.propellers}}</h3>
+          <h3 class="drone-item-subheading">Maximum Speed: {{this.maxSpeed}} </h3>
+        </div>
+        <div class="tools-container">
+          <a class="tool tool-edit" href="/drones/{{this._id}}/edit">Edit</a>
+          <form action="/drones/{{_id}}/delete" method="POST">
+            <button class="tool tool-delete">
+              Delete
+            </button>
+          </form>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+</article>
