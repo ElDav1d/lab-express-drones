@@ -2,10 +2,11 @@
 
 <ul>
   {{#each droneList}}
-  <li>
-    <h3>Name: {{this.name}} </h3>
-    <h4>Propellers: {{this.propellers}}
+    <li>
+      <h3>Name: {{this.name}} </h3>
+      <h4>Propellers: {{this.propellers}}</h4>
       <h4>Maximum Speed: {{this.maxSpeed}} </h4>
-  </li>
+      <a href="/drones/{{this._id}}/edit">Edit</a>
+    </li>
   {{/each}}
 </ul>
